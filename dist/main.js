@@ -12,6 +12,6 @@
   \**********************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements:  */
-eval("\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("function $l (selectors) {\n  let elementList = document.querySelectorAll(selectors);\n  return Array.from(elementList);\n}\n\nwindow.$l = $l;\n\n//# sourceURL=webpack:///./src/index.js?");
 /******/ })()
 ;
