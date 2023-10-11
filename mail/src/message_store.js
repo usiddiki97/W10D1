@@ -22,9 +22,29 @@ let messages = {
     ]
 };
 
+class Message {
+    constructor(from, to, subject, body) {
+        this.from = from;
+        this.to = to;
+        this.subject = subject;
+        this.body = body;
+    }
+}
+
+let messageDraft = new Message();
+
 const MessageStore = {
     getInboxMessages: () => messages.inbox,
-    getSentMessages: () => messages.sent
+    getSentMessages: () => messages.sent,
+    getMessageDraft: () => messageDraft,
+    updateDraftField: (field, value) => {
+        debugger;
+        messageDraft[field] = value;
+    },
+    sendDraft: () => {
+        messages.sent.push(messageDraft);
+        messageDraft = new Message();
+    }
 }
 
 export default MessageStore;
